@@ -99,6 +99,7 @@
       "# Operating System"
       ".DS_Store"
       "Desktop.ini"
+      "docker-compose.override.yml"
     ];
   };
 }

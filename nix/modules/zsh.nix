@@ -33,6 +33,11 @@
       if [ -f "$HOME/.zsh_secrets" ]; then
         source "$HOME/.zsh_secrets"
       fi
+
+      \. "$HOME/.nvm/nvm.sh"
+
+      path+=~/estudio/go/prioritty/bin/
+      source <(pt completion zsh)
     '';
 
     plugins = [
@@ -106,7 +111,8 @@
         "docker compose exec -e PHPUNIT_DISABLE_DB=1 app ./vendor/bin/phpunit";
       utestd =
         "docker compose exec -e XDEBUG_SESSION=1 -e PHPUNIT_DISABLE_DB=1 app php -d xdebug.mode=debug ./vendor/bin/phpunit";
-      dslog = "ds exec app ls -t1 var/log | head -1 | xargs -I {} tail var/log/{}";
+      dslog = "ds exec app ls -t1 var/log | head -3 | xargs -I {} tail var/log/{}";
+      t = "tb";
     };
   };
 

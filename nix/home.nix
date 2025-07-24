@@ -21,7 +21,6 @@
   home.packages = with pkgs; [
     hello
     fortune
-    nerdfetch
     vim
     tldr
     zoxide
