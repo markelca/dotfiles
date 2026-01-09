@@ -34,6 +34,8 @@
     dmenu
     i3status
     acpi
+    mako
+    libnotify
     nixgl.nixGLIntel # openGL wrapper for nix
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     jetbrains-mono
@@ -44,6 +46,10 @@
   home.file = {
     ".config/i3/config" = { source = ../dotfiles/i3/config; };
     ".config/sway/config" = { source = ../dotfiles/sway/config; };
+    ".local/bin/toggle-keyboard.sh" = {
+      source = ../dotfiles/sway/toggle-keyboard.sh;
+      executable = true;
+    };
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
@@ -55,6 +61,14 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
   };
+
+  # Add Go binaries to PATH
+  home.sessionPath = [ 
+    "$HOME/go/bin" 
+    "$HOME/.npm-global/bin"
+    "$HOME/.opencode/bin"
+    "$HOME/.local/bin"
+  ];
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a

@@ -1,12 +1,6 @@
 { _, pkgs, ... }:
 
 {
-  # Add Go binaries to PATH
-  home.sessionPath = [ 
-    "$HOME/go/bin" 
-    "$HOME/.npm-global/bin"
-    "$HOME/.opencode/bin"
-  ];
 
   programs.zsh = {
     enable = true;
