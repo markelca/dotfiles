@@ -6,7 +6,7 @@
     userName = "Markel Cuesta";
     userEmail = if profileName == "work" 
                 then "markel.cuesta@roadsurfer.com" 
-                else "cuestaarribas.markel@proton.me";
+                else "cuesta.markel@proton.me";
 
     delta = {
       enable = true;

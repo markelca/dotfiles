@@ -1,6 +1,13 @@
 { _, pkgs, ... }:
 
 {
+  # Add Go binaries to PATH
+  home.sessionPath = [ 
+    "$HOME/go/bin" 
+    "$HOME/.npm-global/bin"
+    "$HOME/.opencode/bin"
+  ];
+
   programs.zsh = {
     enable = true;
     oh-my-zsh = {
@@ -75,8 +82,6 @@
       }
     ];
 
-    sessionVariables = { PATH = "~/.npm-global/bin:$PATH"; };
-
     shellAliases = {
       # Git aliases
       g = "git";
@@ -117,6 +122,4 @@
     enableZshIntegration = true;
   };
 
-  # Add Go binaries to PATH
-  home.sessionPath = [ "$HOME/go/bin" ];
 }
