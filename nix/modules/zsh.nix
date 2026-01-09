@@ -109,6 +109,8 @@
       test = "docker compose exec app ./vendor/bin/phpunit";
       utest =
         "docker compose exec -e PHPUNIT_DISABLE_DB=1 app ./vendor/bin/phpunit";
+      testd =
+        "docker compose exec -e XDEBUG_SESSION=1 app php -d xdebug.mode=debug ./vendor/bin/phpunit";
       utestd =
         "docker compose exec -e XDEBUG_SESSION=1 -e PHPUNIT_DISABLE_DB=1 app php -d xdebug.mode=debug ./vendor/bin/phpunit";
       dslog = "ds exec app ls -t1 var/log | head -3 | xargs -I {} tail var/log/{}";

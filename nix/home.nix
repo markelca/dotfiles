@@ -38,6 +38,9 @@
     nixgl.nixGLIntel # openGL wrapper for nix
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     jetbrains-mono
+    nodePackages."typescript-language-server"
+    phpactor
+    pnpm
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
