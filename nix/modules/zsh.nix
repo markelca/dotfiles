@@ -34,8 +34,6 @@
         source "$HOME/.zsh_secrets"
       fi
 
-      \. "$HOME/.nvm/nvm.sh"
-
       path+=~/estudio/go/prioritty/bin/
       source <(pt completion zsh)
     '';
